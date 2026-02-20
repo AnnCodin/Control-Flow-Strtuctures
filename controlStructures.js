@@ -207,3 +207,126 @@ console.log(getSeason("January"));
 console.log(getSeason("july"));
 console.log(getSeason("October"));
 console.log(getSeason("Smarch"));
+
+//Part 8: Traffic Light System
+
+function trafficLight(color, pedestrianWaiting) {
+  switch (color) {
+    case "green":
+      return "go";
+      break;
+
+    case "yellow":
+      return "Slow down";
+      break;
+
+    case "red":
+      if (pedestrianWaiting) {
+        return "Stop and wait for pedestrian";
+      }
+      return "Stop";
+      break;
+
+    default:
+      return "Malfunction";
+  }
+}
+
+console.log(trafficLight("green", false));
+console.log(trafficLight("red", true));
+console.log(trafficLight("yellow", false));
+console.log(trafficLight("blue", false));
+
+//Part 9: Movie Ticket Pricing
+
+function getTicketPrice(age, day, isStudent) {
+  let weekDay = day.toLowerCase();
+  let basePrice;
+
+  //Weekdays
+  switch (weekDay) {
+    case "monday":
+    case "tuesday":
+    case "wednesday":
+    case "thursday":
+      basePrice = 12;
+      break;
+
+    //Weekends
+    case "friday":
+    case "saturday":
+    case "sunday":
+      basePrice = 15;
+      break;
+
+    default:
+      return "Invalid day";
+  }
+
+  let discountedPrice = basePrice;
+  if (age < 13) {
+    discountedPrice *= 0.5;
+  } else if (age >= 65) {
+    discountedPrice *= 0.7;
+  } else if (
+    isStudent &&
+    ["monday", "tuesday", "wednesday", "thursday"].includes(weekDay)
+  ) {
+    discountedPrice *= 0.8;
+  }
+  return Number(discountedPrice.toFixed(2));
+}
+
+console.log(getTicketPrice(10, "Monday", false));
+console.log(getTicketPrice(30, "Friday", true));
+console.log(getTicketPrice(30, "Tuesday", true));
+console.log(getTicketPrice(70, "Sunday", false));
+
+//Part 10: Shipping Cost Calculator
+
+function calculateShipping(weight, destination, shippingSpeed) {
+  let baseRate;
+  switch (destination) {
+    case "domestic":
+      baseRate = 5;
+      break;
+    case "international":
+      baseRate = 15;
+      break;
+    default:
+      return "Invalid destination";
+  }
+
+  let weightCost = 0;
+  if (weight > 5 && weight <= 20) {
+    weightCost = 5;
+  } else if (weight > 20) {
+    weightCost = 10 + (weight - 20) * 0.5;
+  }
+
+  const subTotal = baseRate + weightCost;
+
+  let speedMultiplier;
+  switch (shippingSpeed) {
+    case "standard":
+      speedMultiplier = 1;
+      break;
+    case "express":
+      speedMultiplier = 1.5;
+      break;
+    case "overnight":
+      speedMultiplier = 2.5;
+      break;
+    default:
+      return "Invalid input";
+  }
+
+  const totalCost = subTotal * speedMultiplier;
+
+  return Number(totalCost.toFixed(2));
+}
+
+console.log(calculateShipping(3, "domestic", "standard"));
+console.log(calculateShipping(10, "international", "express"));
+console.log(calculateShipping(25, "domestic", "overnight"));
+console.log(calculateShipping(3, "mars", "standard"));
