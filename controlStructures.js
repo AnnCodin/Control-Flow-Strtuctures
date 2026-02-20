@@ -330,3 +330,30 @@ console.log(calculateShipping(3, "domestic", "standard"));
 console.log(calculateShipping(10, "international", "express"));
 console.log(calculateShipping(25, "domestic", "overnight"));
 console.log(calculateShipping(3, "mars", "standard"));
+
+//Part 11: Rock, Paper, Scissors Game
+
+function rockPaperScissors(player1, player2) {
+  let p1 = player1.toLowerCase();
+  let p2 = player2.toLowerCase();
+
+  const validChoices = ["rock", "paper", "scissors"];
+
+  if (!validChoices.includes(p1) || !validChoices.includes(p2)) {
+    return "Invalid input";
+  }
+
+  if (p1 === p2) {
+    return "It's a tie";
+  }
+
+  if (
+    (p1 === "rock" && p2 === "scissors") ||
+    (p1 === "scissors" && p2 === "paper") ||
+    (p1 === "paper" && p2 === "rock")
+  ) {
+    return "Player 1 wins";
+  }
+
+  return "Player 2 wins";
+}
