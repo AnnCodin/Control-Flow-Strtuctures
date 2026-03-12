@@ -97,42 +97,42 @@ function isLeapYear(year) {
   }
 }
 
-console.log(isLeapYear(2024));
-console.log(isLeapYear(1900));
-console.log(isLeapYear(2000));
-console.log(isLeapYear(2021));
+// console.log(isLeapYear(2024));
+// console.log(isLeapYear(1900));
+// console.log(isLeapYear(2000));
+// console.log(isLeapYear(2021));
 
-// //Part 4: Login Validator
+//Part 4: Login Validator
 
-// /**First use the .length method to check if username is at least 5 characters
-//  * and password is also at leat 8 characters.
-//  *
-//  * Use the .test method to check if password contains at least one digit
-//  * */
+/**First use the .length method to check if username is at least 5 characters
+ * and password is also at leat 8 characters.
+ *
+ * Use the .test method to check if password contains at least one digit
+ * */
 
-// function validateLogin(username, password) {
-//   if (username.length < 5) {
-//     return {
-//       isValid: false,
-//       message: "Username must be at least 5 characters",
-//     };
-//   } else if (password.length < 8) {
-//     return {
-//       isValid: false,
-//       message: "Password must be at least 8 characters long.",
-//     };
-//   } else if (!/\d/.test(password)) {
-//     return {
-//       isValid: false,
-//       message: "Password must contain at least one number.",
-//     };
-//   } else {
-//     return {
-//       isValid: true,
-//       message: "Login credentials are valid.",
-//     };
-//   }
-// }
+function validateLogin(username, password) {
+  if (username.length < 5) {
+    return {
+      isValid: false,
+      message: "Username must be at least 5 characters",
+    };
+  } else if (password.length < 8) {
+    return {
+      isValid: false,
+      message: "Password must be at least 8 characters long.",
+    };
+  } else if (!/\d/.test(password)) {
+    return {
+      isValid: false,
+      message: "Password must contain at least one number.",
+    };
+  } else {
+    return {
+      isValid: true,
+      message: "Login credentials are valid.",
+    };
+  }
+}
 
 // console.log(validateLogin("john", "pass"));
 // console.log(validateLogin("john_doe", "password"));
@@ -140,40 +140,40 @@ console.log(isLeapYear(2021));
 
 // //Part 5: Switch Statements
 
-// function getDayName(dayNumber) {
-//   switch (dayNumber) {
-//     case 1:
-//       return `${dayNumber}: "Monday"`;
-//       break;
+function getDayName(dayNumber) {
+  switch (dayNumber) {
+    case 1:
+      return `${dayNumber}: "Monday"`;
+      break;
 
-//     case 2:
-//       return `${dayNumber}: "Tuesday"`;
-//       break;
+    case 2:
+      return `${dayNumber}: "Tuesday"`;
+      break;
 
-//     case 3:
-//       return `${dayNumber}: "Wednesday"`;
-//       break;
+    case 3:
+      return `${dayNumber}: "Wednesday"`;
+      break;
 
-//     case 4:
-//       return `${dayNumber}: "Thursday"`;
-//       break;
+    case 4:
+      return `${dayNumber}: "Thursday"`;
+      break;
 
-//     case 5:
-//       return `${dayNumber}: "Friday"`;
-//       break;
+    case 5:
+      return `${dayNumber}: "Friday"`;
+      break;
 
-//     case 6:
-//       return `${dayNumber}: "Saturday"`;
-//       break;
+    case 6:
+      return `${dayNumber}: "Saturday"`;
+      break;
 
-//     case 7:
-//       return `${dayNumber}: "Sunday"`;
-//       break;
+    case 7:
+      return `${dayNumber}: "Sunday"`;
+      break;
 
-//     default:
-//       return `${dayNumber}: "Invalid day"`;
-//   }
-// }
+    default:
+      return `${dayNumber}: "Invalid day"`;
+  }
+}
 
 // console.log(getDayName(3));
 // console.log(getDayName(7));
@@ -181,69 +181,70 @@ console.log(isLeapYear(2021));
 
 // //Part 6: Simple Calculator
 
-// function calculate(num1, num2, operator) {
-//   switch (operator) {
-//     case "+":
-//       return num1 + num2;
+function calculate(num1, num2, operator) {
+  switch (operator) {
+    case "+":
+      return num1 + num2;
 
-//     case "-":
-//       return num1 - num2;
+    case "-":
+      return num1 - num2;
 
-//     case "*":
-//       return num1 * num2;
+    case "*":
+      return num1 * num2;
 
-//     case "/":
-//       if (num2 === 0) {
-//         return "Cannot divide by zero";
-//       }
-//       return num1 / num2;
+    case "/":
+      if (num2 === 0) {
+        return "Cannot divide by zero";
+      }
+      return num1 / num2;
 
-//     case "%":
-//       if (num2 === 0) {
-//         return "Cannot divide by zero";
-//       }
-//       return num1 % num2;
+    case "%":
+      if (num2 === 0) {
+        return `${num1} cannot be divisible by 0`;
+      } else {
+        return num1 % num2;
+      }
 
-//     default:
-//       return "Invalid operator";
-//   }
-// }
+    default:
+      return "Invalid operator";
+  }
+}
 
 // console.log(calculate(10, 5, "+"));
 // console.log(calculate(10, 5, "-"));
 // console.log(calculate(10, 5, "*"));
 // console.log(calculate(10, 0, "/"));
+// console.log(calculate(2, 2, "%"));
 // console.log(calculate(10, 5, "^"));
 
 // //Part 7: Season Identifier
 
-// function getSeason(month) {
-//   switch (month.toLowerCase()) {
-//     case "december":
-//     case "january":
-//     case "february":
-//       return "Winter";
-//       break;
+function getSeason(month) {
+  switch (month.toLowerCase()) {
+    case "december":
+    case "january":
+    case "february":
+      return "Winter";
 
-//     case "march":
-//     case "april":
-//     case "may":
-//       return "Spring";
+    case "march":
+    case "april":
+    case "may":
+      return "Spring";
 
-//     case "june":
-//     case "july":
-//     case "august":
-//       return "Summer";
+    case "june":
+    case "july":
+    case "august":
+      return "Summer";
 
-//     case "september":
-//     case "october":
-//     case "november":
-//       return "Fall";
+    case "september":
+    case "october":
+    case "november":
+      return "Fall";
 
-//     default:
-//       return "Invalid month";
-//   }
-// }
+    default:
+      return "Invalid month";
+  }
+}
 
 // console.log(getSeason("January"));
 // console.log(getSeason("july"));
@@ -252,27 +253,24 @@ console.log(isLeapYear(2021));
 
 // //Part 8: Traffic Light System
 
-// function trafficLight(color, pedestrianWaiting) {
-//   switch (color) {
-//     case "green":
-//       return "go";
-//       break;
+function trafficLight(color, pedestrianWaiting) {
+  switch (color) {
+    case "green":
+      return "go";
 
-//     case "yellow":
-//       return "Slow down";
-//       break;
+    case "yellow":
+      return "Slow down";
 
-//     case "red":
-//       if (pedestrianWaiting) {
-//         return "Stop and wait for pedestrian";
-//       }
-//       return "Stop";
-//       break;
+    case "red":
+      if (pedestrianWaiting) {
+        return "Stop and wait for pedestrian";
+      }
+      return "Stop";
 
-//     default:
-//       return "Malfunction";
-//   }
-// }
+    default:
+      return "Malfunction";
+  }
+}
 
 // console.log(trafficLight("green", false));
 // console.log(trafficLight("red", true));
